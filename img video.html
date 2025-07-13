@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online tool to convert text into professional videos. Create engaging videos from text in seconds with customizable settings.">
+    <meta name="keywords" content="text to video, AI video generator, free video maker, online video creator, HD video converter">
+    <title>Text2Video Pro | Convert Text to HD Videos Online</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/">
+    <meta property="og:title" content="Text2Video Pro | Convert Text to HD Videos Online">
+    <meta property="og:description" content="Free online tool to convert text into professional videos.">
+    <meta property="og:image" content="https://yourdomain.com/preview.jpg">
+    
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourdomain.com/">
+    <meta property="twitter:title" content="Text2Video Pro | Convert Text to HD Videos Online">
+    <meta property="twitter:description" content="Free online tool to convert text into professional videos.">
+    <meta property="twitter:image" content="https://yourdomain.com/preview.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourdomain.com/" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data (SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Text2Video Pro",
+      "url": "https://yourdomain.com/",
+      "description": "Free online tool to convert text into professional videos.",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web Browser"
+    }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #5649d6;
+            --accent-color: #7d6af2;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #00b894;
+            --warning-color: #fdcb6e;
+            --danger-color: #d63031;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #f5f7fa;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .converter-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .text-input {
+            width: 100%;
+            min-height: 200px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            resize: vertical;
+        }
+        
+        .settings {
+            margin-bottom: 30px;
+        }
+        
+        .settings h3 {
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        select, input[type="range"], input[type="text"] {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .quality-options {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        
+        .quality-option {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex: 1;
+            margin: 0 5px;
+        }
+        
+        .quality-option:hover, .quality-option.active {
+            border-color: var(--primary-color);
+            background-color: rgba(108, 92, 231, 0.05);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+        
+        .preview-section {
+            margin-top: 30px;
+            display: none;
+        }
+        
+        .preview-section h3 {
+            margin-bottom: 20px;
+        }
+        
+        .preview-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #000;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        #video-preview {
+            width: 100%;
+            display: block;
+        }
+        
+        .download-btn {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .ad-container {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            text-align: center;
+            border: 1px dashed #ccc;
+        }
+        
+        .ad-container p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        /* Loading spinner */
+        .spinner {
+            display: none;
+            width: 40px;
+            height: 40px;
+            margin: 20px auto;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav ul li {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .quality-options {
+                flex-direction: column;
+            }
+            
+            .quality-option {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">Text2<span>Video</span> Pro</a>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">How It Works</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Top Ad Banner -->
+    <div class="container ad-container">
+        <p>Advertisement</p>
+        <!-- Replace with your Google AdSense code -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"
+             crossorigin="anonymous"></script>
+        <!-- Text2Video Top Banner -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+             data-ad-slot="YOUR_AD_SLOT_ID"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Convert Text to Stunning Videos</h1>
+            <p>Transform your text into professional-quality videos with our free online tool. Choose from multiple quality options and effects.</p>
+        </div>
+    </section>
+    
+    <!-- Main Converter Tool -->
+    <section class="container converter-container">
+        <textarea class="text-input" id="textInput" placeholder="Enter your text here..."></textarea>
+        
+        <div class="settings">
+            <h3>Video Settings</h3>
+            
+            <div class="form-group">
+                <label for="videoQuality">Video Quality</label>
+                <div class="quality-options">
+                    <div class="quality-option" data-quality="480">
+                        <h4>480p</h4>
+                        <p>Standard Definition</p>
+                    </div>
+                    <div class="quality-option active" data-quality="720">
+                        <h4>720p</h4>
+                        <p>HD Quality</p>
+                    </div>
+                    <div class="quality-option" data-quality="1080">
+                        <h4>1080p</h4>
+                        <p>Full HD</p>
+                    </div>
+                    <div class="quality-option" data-quality="4k">
+                        <h4>4K</h4>
+                        <p>Ultra HD</p>
+                    </div>
+                </div>
+                <input type="hidden" id="videoQuality" value="720">
+            </div>
+            
+            <div class="form-group">
+                <label for="videoDuration">Video Duration (seconds)</label>
+                <input type="range" id="videoDuration" min="5" max="60" value="15">
+                <span id="durationValue">15 seconds</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="fontStyle">Font Style</label>
+                <select id="fontStyle">
+                    <option value="arial">Arial</option>
+                    <option value="roboto">Roboto</option>
+                    <option value="montserrat">Montserrat</option>
+                    <option value="playfair">Playfair Display</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="bgColor">Background Color</label>
+                <input type="color" id="bgColor" value="#ffffff">
+            </div>
+            
+            <div class="form-group">
+                <label for="bgMusic">Background Music</label>
+                <select id="bgMusic">
+                    <option value="none">No Music</option>
+                    <option value="happy">Happy</option>
+                    <option value="calm">Calm</option>
+                    <option value="epic">Epic</option>
+                </select>
+            </div>
+        </div>
+        
+        <button id="generateBtn" class="btn btn-block">Generate Video</button>
+        
+        <!-- Loading Spinner -->
+        <div class="spinner" id="spinner"></div>
+        
+        <!-- Preview Section -->
+        <div class="preview-section" id="previewSection">
+            <h3>Your Video Preview</h3>
+            <div class="preview-container">
+                <video id="video-preview" controls></video>
+            </div>
+            <div class="download-btn">
+                <a href="#" id="downloadBtn" class="btn">Download Video</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Middle Ad Banner -->
+    <div class="container ad-container">
+        <p>Advertisement</p>
+        <!-- Replace with your Google AdSense code -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"
+             crossorigin="anonymous"></script>
+        <!-- Text2Video Middle Rectangle -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-YOUR_ADSENSE_ID"
+             data-ad-slot="YOUR_AD_SLOT_ID"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Text2Video Pro?</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="fas fa-magic"></i>
+                    <h3>AI-Powered</h3>
+                    <p>Our advanced AI transforms your text into engaging videos automatically.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-sliders-h"></i>
+                    <h3>Customizable</h3>
+                    <p>Adjust fonts, colors, duration, and quality to match your style.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-cloud-download-alt"></i>
+                    <h3>Instant Download</h3>
+                    <p>Get your video in MP4 format ready to share on any platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Text2Video Pro</h3>
+                    <p>The easiest way to convert text to professional videos online.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Text2Video Pro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // DOM Elements
+        const textInput = document.getElementById('textInput');
+        const qualityOptions = document.querySelectorAll('.quality-option');
+        const videoQuality = document.getElementById('videoQuality');
+        const videoDuration = document.getElementById('videoDuration');
+        const durationValue = document.getElementById('durationValue');
+        const generateBtn = document.getElementById('generateBtn');
+        const spinner = document.getElementById('spinner');
+        const previewSection = document.getElementById('previewSection');
+        const videoPreview = document.getElementById('video-preview');
+        const downloadBtn = document.getElementById('downloadBtn');
+        
+        // Event Listeners
+        qualityOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                qualityOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+                videoQuality.value = option.dataset.quality;
+            });
+        });
+        
+        videoDuration.addEventListener('input', () => {
+            durationValue.textContent = `${videoDuration.value} seconds`;
+        });
+        
+        generateBtn.addEventListener('click', async () => {
+            if (!textInput.value.trim()) {
+                alert('Please enter some text first');
+                return;
+            }
+            
+            // Show loading state
+            spinner.style.display = 'block';
+            generateBtn.disabled = true;
+            
+            // Simulate processing (in a real app, this would be an API call)
+            setTimeout(() => {
+                spinner.style.display = 'none';
+                generateBtn.disabled = false;
+                
+                // In a real app, you would display the actual generated video
+                // For demo purposes, we'll use a sample video
+                videoPreview.src = 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4';
+                videoPreview.load();
+                
+                // Set download link (in real app, this would be the actual generated file)
+                downloadBtn.href = 'https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4';
+                downloadBtn.download = `text-video-${Date.now()}.mp4`;
+                
+                previewSection.style.display = 'block';
+                
+                // Scroll to preview
+                previewSection.scrollIntoView({ behavior: 'smooth' });
+            }, 2000);
+        });
+        
+        // Initialize Google Ads
+        (function() {
+            // This would be replaced with your actual AdSense initialization code
+            console.log('AdSense initialized');
+        })();
+    </script>
+    
+    <!-- Google Analytics (optional) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+</body>
+</html>
